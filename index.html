@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Title</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="title">Simple Calculator</h1>
+        <p>Enter two numbers</p><br>
+        <div class="input">
+            <label for="num1">Number One</label> <br>
+            <input type="text" id="num1"> <br>
+            <label for="num2">Number Two</label> <br>
+            <input type="text" id="num2"> <br>
+            <hr>
+            <button onclick="calc()">+</button>
+            <button onclick="sub()">-</button>
+            <button onclick="multiplication()">*</button>
+            <button onclick="division()">/</button>
+            <button onclick="procentage()">%</button>
+            <br>
+            <label for="result">Result</label>
+            <br>
+            <input type="text" id="result" readonly="readonly" /><br>
+        </div>
+        <br>
+
+
+    </div>
+    <script>
+        function calc() {
+            let firstNumber = document.getElementById(`num1`).value;
+            let secondNumber = document.getElementById(`num2`).value;
+            let sum = Number(firstNumber) + Number(secondNumber);
+            let resultArea = document.getElementById(`result`).value;
+            document.getElementById(`result`).value = sum;
+        }
+        function sub() {
+            let firstNumber = (document.getElementById(`num1`).value);
+            let secondNumber = (document.getElementById(`num2`).value);
+            let diff = firstNumber - secondNumber;
+            let resultArea = document.getElementById(`result`).value;
+            document.getElementById(`result`).value = diff;
+        }
+        function multiplication(){
+            let firstNumber = (document.getElementById(`num1`).value);
+            let secondNumber = (document.getElementById(`num2`).value);
+            let multiplication = firstNumber * secondNumber;
+            let resultArea = document.getElementById(`result`).value;
+            document.getElementById(`result`).value = multiplication;
+        }
+        function division(){
+            let firstNumber = (document.getElementById(`num1`).value);
+            let secondNumber = (document.getElementById(`num2`).value);
+            let division = firstNumber / secondNumber;
+            let resultArea = document.getElementById(`result`).value;
+            document.getElementById(`result`).value = division;
+        }
+        function procentage(){
+            let firstNumber = (document.getElementById(`num1`).value);
+            let secondNumber = (document.getElementById(`num2`).value);
+            let procentage = (firstNumber / secondNumber)*100;
+            let resultArea = document.getElementById(`result`).value;
+            document.getElementById(`result`).value = `${procentage.toFixed(2)}%`;
+        }
+    </script>
+</body>
+
+</html>
